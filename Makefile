@@ -1,5 +1,13 @@
-default:	
+
+made: configured	
 	touch made
 
+configure: 
+	touch configured
+
+install: made
+	touch installed
+
 clean:
-	rm -rfv configured made
+	rm -rfv configured made installed
+
