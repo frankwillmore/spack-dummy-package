@@ -1,12 +1,12 @@
 
 made: configured	
-	touch made
+	$(CC) mpi_hello.c -o mpi_hello
 
 configure: 
 	touch configured
 
-install: made
-	touch installed
+install: mpi_hello
+	cp mpi_hello bin
 
 clean:
 	rm -rfv configured made installed
