@@ -2,7 +2,7 @@
 made: configured	
 	$(CC) mpi_hello.c -o mpi_hello
 
-configure: 
+configured: 
 	touch configured
 
 install: mpi_hello
