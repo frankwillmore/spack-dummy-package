@@ -1,6 +1,6 @@
 
 made: configured	
-	$(CC) mpi_hello.c -o mpi_hello
+	$(CC) mpi_hello.c -o mpi_hello -dynamic
 
 configured: 
 	touch configured
