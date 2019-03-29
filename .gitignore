@@ -1,3 +1,7 @@
 configured
 mpi_hello
 check.mpi
+*.cobaltlog
+*.error
+*.output
+tmp
