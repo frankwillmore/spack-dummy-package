@@ -1,6 +1,6 @@
 #!/usr/bin/make
 
-PREFIX:=tmp
+#PREFIX:=tmp
 
 made: configured	
 	$(CC) mpi_hello.c -o mpi_hello -dynamic
