@@ -2,7 +2,7 @@ made: configured
 	$(CC) mpi_hello.c -o mpi_hello -dynamic
 
 configured:
-	echo "PREFIX=$PREFIX"
+	echo "PREFIX=$(PREFIX)"
 	touch configured
 
 install: mpi_hello
