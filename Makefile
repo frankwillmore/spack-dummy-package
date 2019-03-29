@@ -10,7 +10,7 @@ configured:
 	touch configured
 
 install: mpi_hello
-	cp mpi_hello bin
+	cp mpi_hello $(PREFIX)/bin
 
 clean:
 	rm -rfv configured made installed
