@@ -5,6 +5,7 @@ configured:
 	echo "PREFIX=$(PREFIX)"
 	echo INSTALL$(INSTALL)
 	echo DESTDIR=$(DESTDIR)
+	echo $(CC), $(CXX), $(F77), and $(FC)
 
 	touch configured
 
