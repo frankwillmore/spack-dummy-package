@@ -3,6 +3,9 @@ made: configured
 
 configured:
 	echo "PREFIX=$(PREFIX)"
+	echo INSTALL$(INSTALL)
+	echo DESTDIR=$(DESTDIR)
+
 	touch configured
 
 install: mpi_hello
