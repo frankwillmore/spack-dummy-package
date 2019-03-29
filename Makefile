@@ -14,7 +14,7 @@ install: mpi_hello
 	cp mpi_hello $(PREFIX)/bin
 
 clean:
-	rm -rfv configured made installed mpi_hello check.mpi
+	rm -rfv configured made installed mpi_hello check.mpi *.error *.output *.cobaltlog
 
 check: mpi_hello install
 	echo "aprun -n 4 $(PREFIX)/bin/mpi_hello" > check.mpi
