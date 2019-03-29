@@ -17,7 +17,7 @@ clean:
 	rm -rfv configured made installed mpi_hello check.mpi *.error *.output *.cobaltlog
 
 check: mpi_hello install
-	echo "aprun -n 4 $(PREFIX)/bin/mpi_hello" > check.mpi
+	echo "aprun -n 4 $(PWD)/$(PREFIX)/bin/mpi_hello" > check.mpi
 	chmod +x check.mpi
 	qsub -A Operations -n1 -t 5 -q debug-cache-quad check.mpi
 	
