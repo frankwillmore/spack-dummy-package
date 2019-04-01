@@ -1,7 +1,7 @@
 from spack import *
 
 
-class SpackDummyPackageGit(MakefilePackage):
+class SpackDummyPackage(MakefilePackage):
     """An mpi hello world that is packaged for spack."""
 
     homepage = "http://www.anl.gov"
