@@ -21,3 +21,4 @@ class SpackDummyPackageGit(MakefilePackage):
         # configure("--prefix={0}", format(prefix))
         make()
         make('install')
+        make('check')
