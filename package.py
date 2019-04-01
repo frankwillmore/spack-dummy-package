@@ -19,6 +19,7 @@ class SpackDummyPackage(MakefilePackage):
     def install(self, spec, prefix):
         # print("Got prefix = " + prefix)
         # configure("--prefix={0}", format(prefix))
+        pwd
         make()
         make('install')
         make('check')
