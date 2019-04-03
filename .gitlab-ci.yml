@@ -1,0 +1,25 @@
+variables:
+ SCHEDULER_PARAMETERS: "-A Operations -n 1 -t 90 -q default" 
+ CI_DEBUG_TRACE: "true"
+ ANL_PROJECT_SERVICE_USER: "ecptestb" 
+
+before_script:
+  - echo "before script"
+
+test1:
+  stage: test
+  variables:
+    ANL_PROJECT_SERVICE_USER: "ecptestb"
+  tags:
+    - onyxpoint
+    - ecp-theta
+    - shell 
+  #artifacts:
+    #untracked: true
+  script:
+    - echo "shell build of spack-dev"
+    - ./ecp-spack-build.sh
+
+after_script:
+  - echo "after script"
+
