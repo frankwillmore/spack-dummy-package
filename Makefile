@@ -23,6 +23,6 @@ check: mpi_hello install
 	pwd
 	echo "aprun -n 4 $(PWD)/$(PREFIX)/bin/mpi_hello" > check.mpi
 	chmod +x check.mpi
-	qsub -A Operations -n1 -t 5 -q default check.mpi
+#	qsub -A Operations -n1 -t 5 -q default check.mpi
 	
 
