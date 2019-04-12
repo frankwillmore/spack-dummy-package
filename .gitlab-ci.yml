@@ -2,7 +2,7 @@ variables:
  ANL_PROJECT_SERVICE_USER: "ecptestb" 
 
 stages:
-  install
+  - install
 
 spack_install:
   stage: install
