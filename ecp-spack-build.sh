@@ -3,6 +3,7 @@
 echo "starting build of spack-dummy-package"
 
 export HOME=/home/ecptestb
+umask 0002
 #module load spack
 . /soft/spack/spack-dev/share/spack/setup-env.sh
 module load cce
