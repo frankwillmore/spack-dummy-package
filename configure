@@ -1,3 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-touch configured
+cp _Makefile Makefile
+
+echo "configured."
