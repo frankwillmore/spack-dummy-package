@@ -1,0 +1,14 @@
+variables:
+ ANL_PROJECT_SERVICE_USER: "ecptestb" 
+
+stages:
+  - install
+
+spack_install:
+  stage: install
+  tags:
+    - ecp-theta
+    - shell 
+  script:
+    - 'echo "Poject: spack-dummy-package Branch: ecp_spack_test"'
+    - ./ecp-spack-build.sh
