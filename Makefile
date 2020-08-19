@@ -1,29 +1,27 @@
 #!/usr/bin/make
 
+CC?=mpicc
 PREFIX?=tmp
 MPIRUN?=mpirun
-CC?=mpicc
 BATCH_COMMAND?="qsub -A Operations -n1 -t 5 -q default check.mpi"
 
-default: configured	
-	${CC} mpi_hello.c -o mpi_hello -shared -fPIC
-
-configured:
-	echo "PREFIX=$(PREFIX)"
-	touch configured
+mpi_hello: 
+	echo "using:  CC=${CC}"
+	echo "        PREFIX=${PREFIX}"
+	echo "        MPIRUN=${MPIRUN}"
+	${CC} mpi_hello.c -o mpi_hello 
 
 install: mpi_hello
 	mkdir -p ${PREFIX}/bin
 	cp mpi_hello ${PREFIX}/bin
 
 clean:
-	rm -rfv configured made installed mpi_hello check.mpi *.error *.output *.cobaltlog
+	rm -rfv tmp mpi_hello check.mpi *.error *.output *.cobaltlog
 
-check: mpi_hello install
-	pwd
+check: install
 	${MPIRUN} -n 4 ${PREFIX}/bin/mpi_hello
 
-check-batch: mpi_hello install 
+check-batch: install 
 	echo "${MPIRUN} -n 4 ${PREFIX}/bin/mpi_hello" > check.mpi
 	chmod +x check.mpi
 	${BATCH_COMMAND}
