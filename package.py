@@ -13,6 +13,7 @@ class SpackDummyPackage(MakefilePackage):
 
     def edit(self, spec, prefix):
         env['PREFIX'] = prefix
+        print("running edit()")
 
     @when('^openmpi') 
     def edit(self, spec, prefix):
