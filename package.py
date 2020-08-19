@@ -14,9 +14,17 @@ class SpackDummyPackage(MakefilePackage):
     def edit(self, spec, prefix):
         env['PREFIX'] = prefix
 
-    def install(self, spec, prefix):
-        # print("Got prefix = " + prefix)
-        # configure("--prefix={0}", format(prefix))
+    @when('^openmpi') 
+    def edit(self, spec, prefix):
+        env['CC'] = 'mpicc'
+        env['MPIRUN'] = 'mpirun'
+        print("using openmpi, setting CC=mpicc")
+
+    def build(self, spec, prefix):
         make()
-        make('install')
         make('check')
+
+    def install(self, spec, prefix):
+        mkdir(prefix.bin)
+        install('mpi_hello', join_path(prefix.bin, 'mpi_hello'))
+
