@@ -1,6 +1,7 @@
 #!/usr/bin/make
 
-CC ?= mpicc
+#CC ?= mpicc
+CC = mpicc
 PREFIX ?= tmp
 MPIRUN ?= mpirun
 BATCH_COMMAND ?= "qsub -A Operations -n1 -t 5 -q default check.mpi"
